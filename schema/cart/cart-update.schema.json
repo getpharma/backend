@@ -1,0 +1,11 @@
+{
+  "$async": true,
+  "type": "object",
+  "additionalProperties": true,
+  "required": [],
+  "properties": {
+    "no_of_units": {
+      "type": "number"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "$async": true,
+  "type": "object",
+  "additionalProperties": false,
+  "required": [],
+  "properties": {
+    "employee_id": {
+      "type": "number",
+      "exists": {
+        "table": "employees",
+        "column": "id"
+      }
+    },
+    "payment_status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "success",
+        "failure"
+      ]
+    },
+    "order_status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "packed",
+        "on the way",
+        "delivered",
+        "cancelled",
+        "rejected",
+        "incomplete"
+      ]
+    },
+    "invoice_url": {
+      "type": "string"
+    }
+  }
+}

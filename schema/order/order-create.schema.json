@@ -1,0 +1,21 @@
+{
+  "$async": true,
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "cart_id",
+    "amount"
+  ],
+  "properties": {
+    "cart_id": {
+      "type": "number",
+      "exists": {
+        "table": "carts",
+        "column": "id"
+      }
+    },
+    "amount": {
+      "type": "number"
+    }
+  }
+}

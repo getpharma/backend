@@ -1,0 +1,43 @@
+{
+  "update_id": 136019603,
+  "message": {
+    "message_id": 11,
+    "from": {
+      "id": 676356263,
+      "is_bot": false,
+      "first_name": "mandeep",
+      "last_name": "yadav",
+      "username": "mandeep0yadav"
+    },
+    "chat": {
+      "id": -357148659,
+      "title": "Yo!",
+      "type": "group",
+      "all_members_are_administrators": false
+    },
+    "date": 1560868460,
+    "new_chat_participant": {
+      "id": 676356263,
+      "is_bot": false,
+      "first_name": "mandeep",
+      "last_name": "yadav",
+      "username": "mandeep0yadav"
+    },
+    "new_chat_member": {
+      "id": 676356263,
+      "is_bot": false,
+      "first_name": "mandeep",
+      "last_name": "yadav",
+      "username": "mandeep0yadav"
+    },
+    "new_chat_members": [
+      {
+        "id": 676356263,
+        "is_bot": false,
+        "first_name": "mandeep",
+        "last_name": "yadav",
+        "username": "mandeep0yadav"
+      }
+    ]
+  }
+}

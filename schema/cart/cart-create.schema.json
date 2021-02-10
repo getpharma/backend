@@ -1,0 +1,21 @@
+{
+  "$async": true,
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "product_id",
+    "no_of_units"
+  ],
+  "properties": {
+    "product_id": {
+      "type": "number",
+      "exists": {
+        "table": "products",
+        "column": "id"
+      }
+    },
+    "no_of_units": {
+      "type": "number"
+    }
+  }
+}

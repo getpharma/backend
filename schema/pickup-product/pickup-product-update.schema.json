@@ -1,0 +1,37 @@
+{
+  "$async": true,
+  "type": "object",
+  "additionalProperties": false,
+  "required": [],
+  "properties": {
+    "employee_id": {
+      "type": "number",
+      "exists": {
+        "table": "employees",
+        "column": "id"
+      }
+    },
+    "wholesaler_product_id": {
+      "type": "number"
+    },
+    "availability": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "complete",
+        "partial",
+        "out of stock",
+        "revised rate"
+      ]
+    },
+    "available_quantity": {
+      "type": "number"
+    },
+    "pickup_date": {
+      "type": "string"
+    },
+    "new_price": {
+      "type": "number"
+    }
+  }
+}

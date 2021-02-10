@@ -1,0 +1,61 @@
+URL => https://medistribution.herokuapp.com
+
+End Points: =>
+
+//USER
+"/login" (post api) (body: {emailOrPhone: string, password: string}),
+"/me" (get api to view my details)(headers: auth toke)
+"/me" (put api to update details)(auth token) (body: {name, email, mobile_no, alternate_no, password, address, landmark, state, pincode, latitude, longitude})
+"/me" (delete api to delete my profile) (auth token)
+
+//PRODUCT
+"/productCategories" (get api to view product categories) (auth token)
+"/products/(+categoryId)" (get api to view products of a category) (auth token)
+"/products?query="something" (get api to search product) (auth token) (isme agar query nhi bhejoge to saare products show ho jaayenge)
+"/trending-products" (get api to view rending products) (auth token)
+
+//CART
+"/my-cart" (get api to view my cart) (auth token)
+"/add-to-cart" (put api to add products)( auth token) (body: {product_id, no_of_units})
+"/empty-card" (delete api to empty cart) (auth token)
+
+//FAVORITES
+"/add-to-favorites/(+productId)" (put api) (token)
+"/remove-favorites/(+productId)" (put api) (token)
+"/empty-favorites" (put api) (token)
+"/favorites" (get api) (token)
+
+//ORDER
+"/orders" (post api) (token) (body: {cart_id, amount :string(compulsory); latitude, longitude: string (not necessary)})
+"/orders" (get api) (token) (view current orders)
+"/history" (get api) (token) (view previous orders)
+"/orders/(+orderId)" (put api to update order) (token) (body: {payment_status, order_status})
+
+//EMPLOYEE
+"/my-employee-profile" (get api) (token)
+"/my-employee-profile" (delete api) (token)
+"/my-employee-profile" (put api) (token) (body: {name, email, mobile_no, password, aadhaar_no, driver_license, address, pincode})
+"/delivery-order" (get api) (token)
+"/deliver-order" (put api) (token) (body: {code, order_id})
+
+//WHOLESALERS
+"/login-wholesaler" (post api) (body: { emailOrPhone, password})
+"/my-wholesaler-profile" (get api) (token)
+"/my-wholesaler-profile" (put api) (token) (body: {name, email, mobile_no, alternate_no, password, address, landmark, state, pincode, latitude, longitude})
+"/my-wholesaler-profile" (delete api) (token)
+
+//WHOLESALER-PRODUCT
+"/wholesaler-product/(+id)" (get api) (token)
+"/products-by-wholesaler/+wholesalerId" (get api) (token)
+"/wholesalers-products" (post api) (token) (body: {product_id, wholesaler_id, mrp, [one of off_percentage, off_amount, deal_price], description})
+"/wholesalers-products/(+id)" (put api) (body: {mrp, description, [one of off_percentage, off_amount, deal_price]})
+"/wholesalers-products/(+id)" (delete api)
+
+
+//PICKUP
+"/upcoming-pickups" (get api => view all products coming from wholesalers) (employee token)
+"/wholesaler-pickups" (get api => view logged in wholesaler's pickups) (wholesaler token)
+"/employee-pickups" (get api => view all pickups of a packager) (Employee token)
+"/pickup/(+id)" (put api) (either employee or wholesaler token) (body: {employee_id,
+                wholesaler_product_id, payment_status(pending, success, failure), order_status(pending, packed, on the way, delivered, cancelled, rejected, incomplete) ,
+                availability(pending, complete, partial, out of stock), available_quantity, pickup_date})

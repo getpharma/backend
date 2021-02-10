@@ -1,0 +1,77 @@
+{
+  "$async": true,
+  "type": "object",
+  "additionalProperties": true,
+  "oneOf": [
+    {
+      "required": [
+        "off_percentage"
+      ]
+    },
+    {
+      "required": [
+        "off_amount"
+      ]
+    },
+    {
+      "required": [
+        "selling_price"
+      ]
+    }
+  ],
+  "required": [
+    "title",
+    "manufacturer",
+    "pack_size",
+    "category_id",
+    "mrp"
+  ],
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "composition": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "manufacturer": {
+      "type": "string"
+    },
+    "pack_size": {
+      "type": "string"
+    },
+    "category_id": {
+      "type": "number",
+      "exists": {
+        "table": "product_categories",
+        "column": "id"
+      }
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "product"
+      ]
+    },
+    "mrp": {
+      "type": "number"
+    },
+    "selling_price": {
+      "type": "number"
+    },
+    "off_percentage": {
+      "type": "number"
+    },
+    "off_amount": {
+      "type": "number"
+    },
+    "is_trending": {
+      "type": "boolean"
+    },
+    "is_active": {
+      "type": "boolean"
+    }
+  }
+}

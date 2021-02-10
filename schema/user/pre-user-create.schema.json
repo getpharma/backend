@@ -1,0 +1,14 @@
+{
+  "$async": true,
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "mobile_no"
+  ],
+  "properties": {
+    "mobile_no": {
+      "type": "string",
+      "pattern": "^[0][1-9]\\d{9}$|^[1-9]\\d{9}$"
+    }
+  }
+}

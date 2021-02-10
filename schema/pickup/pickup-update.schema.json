@@ -1,0 +1,49 @@
+{
+  "$async": true,
+  "type": "object",
+  "additionalProperties": false,
+  "required": [],
+  "properties": {
+    "employee_id": {
+      "type": "number",
+      "exists": {
+        "table": "employees",
+        "column": "id"
+      }
+    },
+    "wholesaler_product_id": {
+      "type": "number"
+    },
+    "payment_status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "success",
+        "failure"
+      ]
+    },
+    "order_status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "received",
+        "cancelled"
+      ]
+    },
+    "availability": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "complete",
+        "partial",
+        "out of stock"
+      ]
+    },
+    "available_quantity": {
+      "type": "number"
+    },
+    "pickup_data": {
+      "type": "string"
+    }
+  }
+}

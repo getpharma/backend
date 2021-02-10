@@ -1,0 +1,37 @@
+{
+  "$async": true,
+  "type": "object",
+  "additionalProperties": true,
+  "oneOf": [
+    {
+      "required": [
+        "off_percentage"
+      ]
+    },
+    {
+      "required": [
+        "off_amount"
+      ]
+    },
+    {
+      "required": [
+        "deal_price"
+      ]
+    }
+  ],
+  "required": [],
+  "properties": {
+    "composition": {
+      "type": "string"
+    },
+    "deal_price": {
+      "type": "number"
+    },
+    "off_percentage": {
+      "type": "number"
+    },
+    "off_amount": {
+      "type": "number"
+    }
+  }
+}

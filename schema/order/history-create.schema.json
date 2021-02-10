@@ -1,0 +1,33 @@
+{
+  "$async": true,
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "cart_ids",
+    "payment_mode",
+    "amount"
+  ],
+  "properties": {
+    "cart_ids": {
+      "type": "array",
+      "items": {
+        "type": "number",
+        "exists": {
+          "table": "carts",
+          "column": "id"
+        }
+      }
+    },
+    "payment_mode": {
+      "type": "string",
+      "enum": [
+        "wallet",
+        "cod",
+        "paytm"
+      ]
+    },
+    "amount": {
+      "type": "number"
+    }
+  }
+}

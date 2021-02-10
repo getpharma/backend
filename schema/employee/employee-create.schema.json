@@ -1,0 +1,57 @@
+{
+  "$async": true,
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "name",
+    "email",
+    "mobile_no",
+    "password",
+    "category",
+    "address",
+    "pincode"
+  ],
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string",
+      "pattern": "^(([^<>()\\[\\]\\.,;:\\s@\\\"]+(\\.[^<>()\\[\\]\\.,;:\\s@\\\"]+)*)|(\\\".+\\\"))@(([^<>()[\\]\\.,;:\\s@\\\"]+\\.)+[^<>()[\\]\\.,;:\\s@\\\"]{2,})$"
+    },
+    "mobile_no": {
+      "type": "string",
+      "pattern": "^[0][1-9]\\d{9}$|^[1-9]\\d{9}$"
+    },
+    "password": {
+      "type": "string"
+    },
+    "aadhaar_no": {
+      "type": "string"
+    },
+    "driver_license": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "admin",
+        "packager",
+        "delivery_man"
+      ]
+    },
+    "address": {
+      "type": "string"
+    },
+    "pincode": {
+      "type": "string",
+      "pattern": "^[1-9]{1}[0-9]{2}\\s{0,1}[0-9]{3}$"
+    },
+    "wholesaler_ids": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    }
+  }
+}

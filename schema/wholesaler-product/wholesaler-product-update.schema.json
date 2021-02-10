@@ -1,0 +1,26 @@
+{
+  "$async": true,
+  "type": "object",
+  "additionalProperties": true,
+  "required": [],
+  "properties": {
+    "composition": {
+      "type": "string"
+    },
+    "mrp": {
+      "type": "number"
+    },
+    "deal_price": {
+      "type": "number"
+    },
+    "off_percentage": {
+      "type": "number"
+    },
+    "off_amount": {
+      "type": "number"
+    },
+    "is_assigned": {
+      "type": "boolean"
+    }
+  }
+}

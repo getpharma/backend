@@ -1,0 +1,16 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "emailOrPhone",
+    "password"
+  ],
+  "properties": {
+    "emailOrPhone": {
+      "type": "string"
+    },
+    "password": {
+      "type": "string"
+    }
+  }
+}
